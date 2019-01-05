@@ -1,60 +1,62 @@
 import React from 'react';
 import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
-
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Entypo from 'react-native-vector-icons/Entypo';
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import Search from '../screens/search';
+import MyTickets from '../screens/myTickets';
+import ManageTickets from '../screens/manageTickets';
 
-const HomeStack = createStackNavigator({
-  Home: HomeScreen,
+const SearchStack = createStackNavigator({
+  Search: Search,
 });
 
-HomeStack.navigationOptions = {
-  tabBarLabel: 'Home',
+SearchStack.navigationOptions = {
+  tabBarLabel: 'Search',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+          ? `ios-search`
+          : 'md-search'
       }
     />
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const TicketsStack = createStackNavigator({
+  Tickets: MyTickets,
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+TicketsStack.navigationOptions = {
+  tabBarLabel: 'My Tickets',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'}
+      name={Platform.OS === 'ios' ? 'ios-albums' : 'md-albums'}
     />
   ),
 };
 
-const SettingsStack = createStackNavigator({
-  Settings: SettingsScreen,
+const ManageStack = createStackNavigator({
+  Manage: ManageTickets,
 });
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+ManageStack.navigationOptions = {
+  tabBarLabel: 'Manage Tickets',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+      name={Platform.OS === 'ios' ? 'ios-build' : 'md-build'}
     />
   ),
 };
 
 export default createBottomTabNavigator({
-  HomeStack,
-  LinksStack,
-  SettingsStack,
+  SearchStack,
+  TicketsStack,
+  ManageStack,
 });
