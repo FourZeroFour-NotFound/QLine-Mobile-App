@@ -7,7 +7,7 @@ import Entypo from 'react-native-vector-icons/Entypo';
 import TabBarIcon from '../components/TabBarIcon';
 import Search from '../screens/search';
 import MyTickets from '../screens/myTickets';
-import ManageTickets from '../screens/manageTickets';
+import MyProfile from '../screens/myProfile';
 
 const SearchStack = createStackNavigator({
   Search: Search,
@@ -41,16 +41,16 @@ TicketsStack.navigationOptions = {
   ),
 };
 
-const ManageStack = createStackNavigator({
-  Manage: ManageTickets,
+const ProfileStack = createStackNavigator({
+  Profile: MyProfile,
 });
 
-ManageStack.navigationOptions = {
-  tabBarLabel: 'Manage Tickets',
+ProfileStack.navigationOptions = {
+  tabBarLabel: 'My Profile',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
-      name={Platform.OS === 'ios' ? 'ios-build' : 'md-build'}
+      name={Platform.OS === 'ios' ? 'ios-person' : 'md-person'}
     />
   ),
 };
@@ -58,5 +58,5 @@ ManageStack.navigationOptions = {
 export default createBottomTabNavigator({
   SearchStack,
   TicketsStack,
-  ManageStack,
+  ProfileStack,
 });

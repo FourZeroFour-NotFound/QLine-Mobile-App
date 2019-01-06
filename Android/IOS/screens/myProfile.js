@@ -28,9 +28,9 @@ import {
 }
   from 'native-base';
 
-export default class MyTickets extends React.Component {
+export default class MyProfile extends React.Component {
   static navigationOptions = {
-    title: 'My Tickets',
+    title: 'My Profile',
   };
 
   render() {
@@ -47,39 +47,26 @@ export default class MyTickets extends React.Component {
             <Content>
               <Card>
                 <CardItem cardBody >
-                  <Text style={{ fontSize: 20, color: '#aa1256' }}>
-                    Boring Queue
-            </Text>
                   <Image
-                    source={{ uri: 'https://icons8.com/vue-static/icon/collection-favorites.png' }}
-                    style={{ height: 200, width: null, flex: 1 }}
+                    source={{ uri: 'https://i.ibb.co/SN5qmhF/qline.png' }}
+                    style={{ height: 150, width: null, flex: 1 }}
                   />
                 </CardItem>
                 <CardItem>
                   <Body>
-                    <Text>This is the information for this Tickets</Text>
+                    <Text>First Name: Esraa</Text>
+                    <Text>Last Name: Zaitoun</Text>
+                    <Text>Email: eng.esraaz1991@gmail.com</Text>
+                    <Text>Phone Number: 0790782785</Text>
                   </Body>
-                </CardItem>
-                <CardItem>
-                  <View style={{ marginTop: 20, marginLeft: 10, height: 50, width: 100 }}>
-                    <Button
-                      onPress={() => console.log('Ask me later pressed')}
-                      title="Delay"
-                      color="#7aeac2" />
-                  </View>
-                  <View style={{ marginTop: 20, marginLeft: 120, height: 50, width: 100 }}>
-                    <Button
-                      onPress={() => console.log('Ask me later pressed')}
-                      title="Delete"
-                      color="#aa1256" />
-                  </View>
                 </CardItem>
               </Card>
             </Content>
           </Container>
         </ScrollView>
       </View>
-    );
+
+    )
   }
 }
 
