@@ -5,12 +5,14 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity, 
-  AppRegistry, 
-  TextInput, 
+  TouchableOpacity,
+  AppRegistry,
+  TextInput,
   InputAccessoryView,
   View,
-  Button
+  Button,
+  Alert,
+  TouchableHighlight
 } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -20,8 +22,8 @@ import { MonoText } from '../components/StyledText';
 export default class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {text: ''};
-  }  
+    this.state = { text: '' };
+  }
   static navigationOptions = {
     header: null,
   };
@@ -38,25 +40,37 @@ export default class Search extends React.Component {
             />
           </View>
           <View>
-            <Text style={{marginLeft:70,fontSize:18}}>Seach for the queue name:</Text>
-            <View style={{marginTop:20}}>
-            <SearchBar
-              lightTheme
-              platform="android"
-              onChangeText={(text) => this.setState({text})}
-              // onClear={someMethod}
-              cancelIcon={{ type: 'font-awesome', name: 'chevron-left' }}
-              placeholder='Search...' />
+            <Text style={{ marginLeft: 50, fontSize: 18 }}>Joine to the queue by queue ID:</Text>
+          </View>
+          <View style={{ marginTop: 20 }}>
+            <TextInput
+              style={{ alignItems: 'center', justifyContent: 'center', backgroundColor: 'white' }}
+              // value={this.state.searchString}
+              // onChangeText={(searchString) => { this.setState({ searchString }) }}
+              placeholder='Search'
+              keyboardType='web-search'
+              // onSubmitEditing={() => { this._fetchResults() }}
+              ref='searchBar'
+            />
+            <TouchableHighlight 
+            onPress={() => Alert.alert('Hello World')}
+            style={{ alignItems: 'center', justifyContent: 'center' }} 
+            // onPress={() => { this._fetchResults() }} 
+            underlayColor='transparent'>
+              <View>
+                <Icon name="search" size={20} color="#4285F4" />
               </View>
+            </TouchableHighlight>
           </View>
-          <Text style={{marginTop:40, marginLeft:70, fontSize:18}}>Scan the barcode for the queue:</Text>
-          <View style={{marginTop:20,marginLeft:140, height:50, width:100}}>
-          <Button
-            title="Scan"
-            color="#aa1256"
-          />
+          <Text style={{ marginTop: 40, marginLeft: 70, fontSize: 18 }}>Scan the barcode for the queue:</Text>
+          <View style={{ marginTop: 20, marginLeft: 140, height: 50, width: 100 }}>
+            <Button
+              onPress={() => console.log('Ask me later pressed')}
+              title="Scan"
+              color="#aa1256"
+            />
           </View>
-          </ScrollView>
+        </ScrollView>
       </View>
     );
   }
