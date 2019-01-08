@@ -12,7 +12,7 @@ import {
   View,
   Button,
   Alert,
-  TouchableHighlight
+  TouchableHighlight,
 } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -58,7 +58,12 @@ export default class Search extends React.Component {
             // onPress={() => { this._fetchResults() }} 
             underlayColor='transparent'>
               <View>
-                <Icon name="search" size={20} color="#4285F4" />
+                <Button
+                  onPress={() => console.log('Ask me later pressed')}
+                  title="Search"
+                  color="#aa1256"
+                />
+                {/* <Icon name="search" size='20' color="#4285F4" /> */}
               </View>
             </TouchableHighlight>
           </View>
