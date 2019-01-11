@@ -40,7 +40,7 @@ export default class Search extends React.Component {
             />
           </View>
           <View>
-            <Text style={{ marginLeft: 50, fontSize: 18 }}>Joine to the queue by queue ID:</Text>
+            <Text style={{ textAlign: "center", fontSize: 18 }}>Join us by your queue ID:</Text>
           </View>
           <View style={{ marginTop: 20 }}>
             <TextInput
@@ -58,14 +58,14 @@ export default class Search extends React.Component {
             // onPress={() => { this._fetchResults() }} 
             underlayColor='transparent'>
               <View>
-                <Icon name="search" size={20} color="#4285F4" />
+                {/* <SearchBar  lightTheme onChangeText={() => {}} placeholder='Type Here...' /> */}
               </View>
             </TouchableHighlight>
           </View>
-          <Text style={{ marginTop: 40, marginLeft: 70, fontSize: 18 }}>Scan the barcode for the queue:</Text>
+          <Text style={{ marginTop: 40,  textAlign: "center", fontSize: 18 }}>Scan the barcode for the queue:</Text>
           <View style={{ marginTop: 20, marginLeft: 140, height: 50, width: 100 }}>
             <Button
-              onPress={() => console.log('Ask me later pressed')}
+              onPress={() => console.log('Ask me later')}
               title="Scan"
               color="#aa1256"
             />
